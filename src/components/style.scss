@@ -29,6 +29,11 @@
       font-size: 18px;
       margin-left: 8px;
       width: 147px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #FE4687;
     }
 
     button:disabled {
@@ -96,7 +101,13 @@
         font-size: 18px;
         margin-left: 8px;
         width: 147px;
+        cursor: pointer;
       }
+
+      button:hover {
+        background-color: #FE4687;
+      }
+      
       button:disabled {
         opacity: 0.5;
       }
