@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import detectEthereumProvider from "@metamask/detect-provider";
-import { WalletTypes, getConfig, configNetwork } from "./constants";
+import { getConfig } from "./constants";
 import store from "../logic/reducers";
 import { login, logout } from "../logic/actions";
 
@@ -147,6 +147,7 @@ class Wallet {
     switch (this.walletType) {
       case 'metamask':
         const res = await this.web3.currentProvider._handleDisconnect();
+        console.log(res);
         store.dispatch(logout());
         break;
 

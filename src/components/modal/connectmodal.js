@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 import wallet from "../../utils/wallet";
 import './style.scss'; 
 function ConnectModal(props) {
@@ -26,7 +26,7 @@ function ConnectModal(props) {
               Connect your wallet
             </div>
             <div className="description">
-              Please connect your wallet with <a href="https://snowtrace.io/" target="_blank">Avalanche network</a>
+              Please connect your wallet with <a href="https://snowtrace.io/" target="_blank" rel="noreferrer">Avalanche network</a>
             </div>
             <div className="close-btn" onClick={() => closeModal()}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +37,7 @@ function ConnectModal(props) {
           </div>
           <div className="modal-body">
             <button onClick={() => handleConnect('metamask')}>
-              <img src="../assets/icons/Metamask.png" />
+              <img src="../assets/icons/Metamask.png" alt="" />
               Metamask
             </button>
             {/* <button>
@@ -45,7 +45,7 @@ function ConnectModal(props) {
               TrustWallet
             </button> */}
             <button onClick={() => handleConnect('walletconnect')}>
-              <img src="../assets/icons/WalletConnect.png" />
+              <img src="../assets/icons/WalletConnect.png" alt="" />
               WalletConnect
             </button>
           </div>

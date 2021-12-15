@@ -9,10 +9,33 @@
   max-width: 556px;
   width: 100%;
 
-  .box-title{
-    font-size: 20px;
-    font-weight: 600;
+  .box-pad {
+    display: flex;
+    justify-content: space-between;
+
+    .box-title {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 50px;
+    }
+
+    button {
+      background: #FF3C6A;
+      border-radius: 10px;
+      height: 52px;
+      border: none;
+      color: #FFF;
+      font-weight: 600;
+      font-size: 18px;
+      margin-left: 8px;
+      width: 147px;
+    }
+
+    button:disabled {
+      opacity: 0.5;
+    }
   }
+  
 
   .box-body{
     margin-top: 20px;
@@ -92,8 +115,8 @@
         margin-top: 10px;
       }
       .status-text {
-        font-size: 24px;
-        color: red;
+        font-size: 16px;
+        color: white;
       }
     }
   }

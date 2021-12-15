@@ -37,6 +37,12 @@ const userReducer = (state = initialState, action) => {
         busdBalance: "0",
         network: "",
       };
+    
+    // case BUYKANDY_SUCCESS:
+    //   return {
+    //     ...state, 
+    //     claim: action.payload
+    //   }
 
     default:
       return state;
