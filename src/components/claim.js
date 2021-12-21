@@ -5,7 +5,7 @@ import {ethers} from 'ethers';
 import './style.scss';
 
 const KandySale = require("../kandysale-abi.json");
-const KandySale_ADDRESS = "0x121609b6400BC15F4b8BeCEFE186ac1F92a4bC8f";
+const KandySale_ADDRESS = "0xfc84aA4A1d909f2A9f73e7324a24586E28A00Fe9";
 
 function ClaimBox() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -32,7 +32,7 @@ function ClaimBox() {
       } else {
         try {          
           const claimKandyTX = await KandySaleContract.connect(provider.getSigner()).claimKANDY(          
-            { gasLimit: ethers.utils.hexlify(300000), gasPrice: ethers.utils.parseUnits("10", "gwei") }         
+            { gasLimit: ethers.utils.hexlify(80000), gasPrice: ethers.utils.parseUnits("25", "gwei") }         
           )    
           let receipt = await claimKandyTX.wait();        
           console.log(claimKandyTX);
@@ -85,7 +85,7 @@ function ClaimBox() {
         <div className="box-status">
           <span>Deposited: {invested * 5} MIM</span>
           <span>Available to claim: {invested} Kandy</span>
-          <span>Claiming available from: 18th Dec</span>
+          <span>Claiming available from: 21th Dec</span>
           <span className='status-text'>{status}</span>
         </div>
       </div>

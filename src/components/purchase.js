@@ -4,9 +4,9 @@ import {ethers} from 'ethers';
 import './style.scss';
 
 const KandySale = require("../kandysale-abi.json");
-const KandySale_ADDRESS = "0x121609b6400BC15F4b8BeCEFE186ac1F92a4bC8f";
+const KandySale_ADDRESS = "0xfc84aA4A1d909f2A9f73e7324a24586E28A00Fe9";
 const Mim = require("../mim-abi.json");
-const Mim_ADDRESS = "0x66691162DB0499Fa8C4311fa7E1C660AfAc14B7c";
+const Mim_ADDRESS = "0x130966628846BFd36ff31a822705796e8cb8C18D";
 
 function PurchaseBox() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -39,7 +39,7 @@ function PurchaseBox() {
       try {          
         const buyKandyTX = await KandySaleContract.connect(provider.getSigner()).buyKANDY(
           _amountOfMIMToSwap,
-          { gasLimit: ethers.utils.hexlify(300000), gasPrice: ethers.utils.parseUnits("10", "gwei") }         
+          { gasLimit: ethers.utils.hexlify(300000), gasPrice: ethers.utils.parseUnits("25", "gwei") }         
         )    
         let receipt = await buyKandyTX.wait();        
         console.log(buyKandyTX);
@@ -60,9 +60,9 @@ function PurchaseBox() {
     else {    
       try {          
         const approveMIMTX = await MimContract.connect(provider.getSigner()).approve(
-          ethers.utils.getAddress("0x121609b6400BC15F4b8BeCEFE186ac1F92a4bC8f"),
+          ethers.utils.getAddress("0xfc84aA4A1d909f2A9f73e7324a24586E28A00Fe9"),
           _amountMIMToAllow,
-          { gasLimit: ethers.utils.hexlify(300000), gasPrice: ethers.utils.parseUnits("10", "gwei") }         
+          { gasLimit: ethers.utils.hexlify(80000), gasPrice: ethers.utils.parseUnits("25", "gwei") }         
         )    
         let receipt = await approveMIMTX.wait();        
         console.log(approveMIMTX);
@@ -90,7 +90,7 @@ function PurchaseBox() {
         {isLoggedIn? <button onClick={onApproveMIM}>Approve</button> : <button onClick={onApproveMIM} disabled>Approve</button>}
       </div>
       <div className="box-body">
-        <div className="input-label">Enter a amount of MIM</div>
+        <div className="input-label">Enter a amount of Kandy</div>
         <div className="input-box">
           <div className="input-purchase">
             <input type="number" value={amount} onChange={handleChange} placeholder='200'/>

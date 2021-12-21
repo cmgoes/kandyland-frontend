@@ -5,7 +5,7 @@ import PurchaseBox from '../components/purchase';
 import ClaimBox from '../components/claim';
 
 const KandySale = require("../kandysale-abi.json");
-const KandySale_ADDRESS = "0x121609b6400BC15F4b8BeCEFE186ac1F92a4bC8f";
+const KandySale_ADDRESS = "0xfc84aA4A1d909f2A9f73e7324a24586E28A00Fe9";
 
 function Board() {
   const [sold, setSold] = useState(0);

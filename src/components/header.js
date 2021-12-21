@@ -24,7 +24,7 @@ function Header(props) {
       <div className="wallet">
         {isLoggedIn ? 
         <div className="user-info">
-          <span className="balance">12.043 KANDY</span>
+          {/* <span className="balance">12.043 KANDY</span> */}
           <button className="address" onClick={() => openWalletModal()}>
             {userAddress.replace(userAddress.substring(6, 38), "...")}
             <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
